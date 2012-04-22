@@ -19863,6 +19863,23 @@ CREATE TABLE `vehicle_accessory` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `Version`
+-- ----------------------------
+CREATE TABLE `version` (
+	`Version` INT NULL,
+	`Commit` INT(10) NULL,
+	`UpdatePack` INT(10) NULL,
+	`Database` CHAR(50) NULL
+)
+COMMENT='Strawberry\'s DB Version. What Version you are running.'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB AUTO_INCREMENT=803 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of vehicle_accessory
+-- ----------------------------
+INSERT INTO `version` (`Version`, `Commit`, `UpdatePack`, `Database`) VALUES (1, 2, 0, 'StrawberryDB');
+-- ----------------------------
 -- Table structure for `warden_data_result`
 -- ----------------------------
 DROP TABLE IF EXISTS `warden_data_result`;
