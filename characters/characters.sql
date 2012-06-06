@@ -24,7 +24,7 @@ CREATE TABLE `account_data` (
   `time` bigint(11) unsigned NOT NULL DEFAULT '0',
   `data` longblob NOT NULL,
   PRIMARY KEY (`account`,`type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of account_data
@@ -45,7 +45,7 @@ CREATE TABLE `arena_team` (
   `BorderStyle` int(10) unsigned NOT NULL DEFAULT '0',
   `BorderColor` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`arenateamid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of arena_team
@@ -64,7 +64,7 @@ CREATE TABLE `arena_team_member` (
   `wons_season` int(10) unsigned NOT NULL DEFAULT '0',
   `personal_rating` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`arenateamid`,`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of arena_team_member
@@ -83,7 +83,7 @@ CREATE TABLE `arena_team_stats` (
   `wins_season` int(10) unsigned NOT NULL DEFAULT '0',
   `rank` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`arenateamid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of arena_team_stats
@@ -109,7 +109,7 @@ CREATE TABLE `auction` (
   `startbid` int(11) NOT NULL DEFAULT '0',
   `deposit` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auction
@@ -209,7 +209,7 @@ CREATE TABLE `characters` (
   KEY `idx_account` (`account`),
   KEY `idx_online` (`online`),
   KEY `idx_name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of characters
@@ -225,7 +225,7 @@ CREATE TABLE `character_account_data` (
   `time` bigint(11) unsigned NOT NULL DEFAULT '0',
   `data` longblob NOT NULL,
   PRIMARY KEY (`guid`,`type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_account_data
@@ -240,7 +240,7 @@ CREATE TABLE `character_achievement` (
   `achievement` int(11) unsigned NOT NULL,
   `date` bigint(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`achievement`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_achievement
@@ -256,7 +256,7 @@ CREATE TABLE `character_achievement_progress` (
   `counter` int(11) unsigned NOT NULL,
   `date` bigint(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`criteria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_achievement_progress
@@ -273,7 +273,7 @@ CREATE TABLE `character_action` (
   `action` int(11) unsigned NOT NULL DEFAULT '0',
   `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`spec`,`button`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_action
@@ -300,7 +300,7 @@ CREATE TABLE `character_aura` (
   `remaintime` int(11) NOT NULL DEFAULT '0',
   `effIndexMask` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`caster_guid`,`item_guid`,`spell`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_aura
@@ -323,7 +323,7 @@ CREATE TABLE `character_battleground_data` (
   `taxi_end` int(11) NOT NULL DEFAULT '0',
   `mount_spell` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_battleground_data
@@ -341,7 +341,7 @@ CREATE TABLE `character_declinedname` (
   `instrumental` varchar(15) NOT NULL DEFAULT '',
   `prepositional` varchar(15) NOT NULL DEFAULT '',
   PRIMARY KEY (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of character_declinedname
@@ -380,7 +380,7 @@ CREATE TABLE `character_equipmentsets` (
   PRIMARY KEY (`setguid`),
   UNIQUE KEY `idx_set` (`guid`,`setguid`,`setindex`),
   KEY `Idx_setindex` (`setindex`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_equipmentsets
@@ -397,7 +397,7 @@ CREATE TABLE `character_gifts` (
   `flags` int(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`item_guid`),
   KEY `idx_guid` (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_gifts
@@ -413,7 +413,7 @@ CREATE TABLE `character_glyphs` (
   `slot` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `glyph` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`spec`,`slot`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_glyphs
@@ -431,7 +431,7 @@ CREATE TABLE `character_homebind` (
   `position_y` float NOT NULL DEFAULT '0',
   `position_z` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_homebind
@@ -447,7 +447,7 @@ CREATE TABLE `character_instance` (
   `permanent` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`instance`),
   KEY `instance` (`instance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_instance
@@ -465,7 +465,7 @@ CREATE TABLE `character_inventory` (
   `item_template` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Item Identifier',
   PRIMARY KEY (`item`),
   KEY `idx_guid` (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_inventory
@@ -497,7 +497,7 @@ CREATE TABLE `character_pet` (
   `abdata` longtext,
   PRIMARY KEY (`id`),
   KEY `owner` (`owner`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet System';
 
 -- ----------------------------
 -- Records of character_pet
@@ -517,7 +517,7 @@ CREATE TABLE `character_pet_declinedname` (
   `prepositional` varchar(12) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `owner_key` (`owner`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of character_pet_declinedname
@@ -545,7 +545,7 @@ CREATE TABLE `character_queststatus` (
   `itemcount5` int(11) unsigned NOT NULL DEFAULT '0',
   `itemcount6` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`quest`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_queststatus
@@ -560,7 +560,7 @@ CREATE TABLE `character_queststatus_daily` (
   `quest` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`guid`,`quest`),
   KEY `idx_guid` (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_queststatus_daily
@@ -575,7 +575,7 @@ CREATE TABLE `character_queststatus_monthly` (
   `quest` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`guid`,`quest`),
   KEY `idx_guid` (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_queststatus_monthly
@@ -590,7 +590,7 @@ CREATE TABLE `character_queststatus_weekly` (
   `quest` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`guid`,`quest`),
   KEY `idx_guid` (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_queststatus_weekly
@@ -606,7 +606,7 @@ CREATE TABLE `character_reputation` (
   `standing` int(11) NOT NULL DEFAULT '0',
   `flags` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`faction`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_reputation
@@ -622,7 +622,7 @@ CREATE TABLE `character_skills` (
   `value` mediumint(9) unsigned NOT NULL,
   `max` mediumint(9) unsigned NOT NULL,
   PRIMARY KEY (`guid`,`skill`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_skills
@@ -642,7 +642,7 @@ CREATE TABLE `character_social` (
   KEY `friend` (`friend`),
   KEY `guid_flags` (`guid`,`flags`),
   KEY `friend_flags` (`friend`,`flags`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_social
@@ -659,7 +659,7 @@ CREATE TABLE `character_spell` (
   `disabled` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`spell`),
   KEY `Idx_spell` (`spell`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_spell
@@ -675,7 +675,7 @@ CREATE TABLE `character_spell_cooldown` (
   `item` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Item Identifier',
   `time` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`spell`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_spell_cooldown
@@ -720,7 +720,7 @@ CREATE TABLE `character_stats` (
   `rangedAttackPower` int(10) unsigned NOT NULL DEFAULT '0',
   `spellPower` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_stats
@@ -739,7 +739,7 @@ CREATE TABLE `character_talent` (
   KEY `guid_key` (`guid`),
   KEY `talent_key` (`talent_id`),
   KEY `spec_key` (`spec`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of character_talent
@@ -756,7 +756,7 @@ CREATE TABLE `character_ticket` (
   `response_text` text,
   `ticket_lastchange` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ticket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_ticket
@@ -777,7 +777,7 @@ CREATE TABLE `character_tutorial` (
   `tut6` int(11) unsigned NOT NULL DEFAULT '0',
   `tut7` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`account`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player System';
 
 -- ----------------------------
 -- Records of character_tutorial
@@ -804,7 +804,7 @@ CREATE TABLE `corpse` (
   KEY `instance` (`instance`),
   KEY `Idx_player` (`player`),
   KEY `Idx_time` (`time`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Death System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Death System';
 
 -- ----------------------------
 -- Records of corpse
@@ -820,7 +820,7 @@ CREATE TABLE `creature_respawn` (
   `instance` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`instance`),
   KEY `instance` (`instance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Grid Loading System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Grid Loading System';
 
 -- ----------------------------
 -- Records of creature_respawn
@@ -836,7 +836,7 @@ CREATE TABLE `gameobject_respawn` (
   `instance` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`instance`),
   KEY `instance` (`instance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Grid Loading System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Grid Loading System';
 
 -- ----------------------------
 -- Records of gameobject_respawn
@@ -880,7 +880,7 @@ CREATE TABLE `groups` (
   `raiddifficulty` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`groupId`),
   UNIQUE KEY `leaderGuid` (`leaderGuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Groups';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Groups';
 
 -- ----------------------------
 -- Records of groups
@@ -896,7 +896,7 @@ CREATE TABLE `group_instance` (
   `permanent` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`leaderGuid`,`instance`),
   KEY `instance` (`instance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of group_instance
@@ -913,7 +913,7 @@ CREATE TABLE `group_member` (
   `subgroup` smallint(6) unsigned NOT NULL,
   PRIMARY KEY (`groupId`,`memberGuid`),
   KEY `Idx_memberGuid` (`memberGuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Groups';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Groups';
 
 -- ----------------------------
 -- Records of group_member
@@ -937,7 +937,7 @@ CREATE TABLE `guild` (
   `createdate` bigint(20) unsigned NOT NULL DEFAULT '0',
   `BankMoney` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guildid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
 
 -- ----------------------------
 -- Records of guild
@@ -961,7 +961,7 @@ CREATE TABLE `guild_bank_eventlog` (
   KEY `guildid_key` (`guildid`),
   KEY `Idx_PlayerGuid` (`PlayerGuid`),
   KEY `Idx_LogGuid` (`LogGuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of guild_bank_eventlog
@@ -980,7 +980,7 @@ CREATE TABLE `guild_bank_item` (
   PRIMARY KEY (`guildid`,`TabId`,`SlotId`),
   KEY `guildid_key` (`guildid`),
   KEY `Idx_item_guid` (`item_guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of guild_bank_item
@@ -998,7 +998,7 @@ CREATE TABLE `guild_bank_right` (
   `SlotPerDay` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guildid`,`TabId`,`rid`),
   KEY `guildid_key` (`guildid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of guild_bank_right
@@ -1016,7 +1016,7 @@ CREATE TABLE `guild_bank_tab` (
   `TabText` text,
   PRIMARY KEY (`guildid`,`TabId`),
   KEY `guildid_key` (`guildid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of guild_bank_tab
@@ -1038,7 +1038,7 @@ CREATE TABLE `guild_eventlog` (
   KEY `Idx_PlayerGuid1` (`PlayerGuid1`),
   KEY `Idx_PlayerGuid2` (`PlayerGuid2`),
   KEY `Idx_LogGuid` (`LogGuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Guild Eventlog';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Guild Eventlog';
 
 -- ----------------------------
 -- Records of guild_eventlog
@@ -1071,7 +1071,7 @@ CREATE TABLE `guild_member` (
   UNIQUE KEY `guid_key` (`guid`),
   KEY `guildid_key` (`guildid`),
   KEY `guildid_rank_key` (`guildid`,`rank`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Guild System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Guild System';
 
 -- ----------------------------
 -- Records of guild_member
@@ -1089,7 +1089,7 @@ CREATE TABLE `guild_rank` (
   `BankMoneyPerDay` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guildid`,`rid`),
   KEY `Idx_rid` (`rid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
 
 -- ----------------------------
 -- Records of guild_rank
@@ -1109,7 +1109,7 @@ CREATE TABLE `instance` (
   PRIMARY KEY (`id`),
   KEY `map` (`map`),
   KEY `resettime` (`resettime`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of instance
@@ -1124,7 +1124,7 @@ CREATE TABLE `instance_reset` (
   `difficulty` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `resettime` bigint(40) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`mapid`,`difficulty`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of instance_reset
@@ -1141,7 +1141,7 @@ CREATE TABLE `item_instance` (
   `text` longtext,
   PRIMARY KEY (`guid`),
   KEY `idx_owner_guid` (`owner_guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Item System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Item System';
 
 -- ----------------------------
 -- Records of item_instance
@@ -1160,7 +1160,7 @@ CREATE TABLE `item_loot` (
   `property` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`itemid`),
   KEY `idx_owner_guid` (`owner_guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Item System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Item System';
 
 -- ----------------------------
 -- Records of item_loot
@@ -1187,7 +1187,7 @@ CREATE TABLE `mail` (
   `checked` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `idx_receiver` (`receiver`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Mail System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Mail System';
 
 -- ----------------------------
 -- Records of mail
@@ -1204,7 +1204,7 @@ CREATE TABLE `mail_items` (
   `receiver` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Character Global Unique Identifier',
   PRIMARY KEY (`mail_id`,`item_guid`),
   KEY `idx_receiver` (`receiver`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of mail_items
@@ -1221,7 +1221,7 @@ CREATE TABLE `petition` (
   `type` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`ownerguid`,`type`),
   UNIQUE KEY `index_ownerguid_petitionguid` (`ownerguid`,`petitionguid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
 
 -- ----------------------------
 -- Records of petition
@@ -1240,7 +1240,7 @@ CREATE TABLE `petition_sign` (
   PRIMARY KEY (`petitionguid`,`playerguid`),
   KEY `Idx_playerguid` (`playerguid`),
   KEY `Idx_ownerguid` (`ownerguid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Guild System';
 
 -- ----------------------------
 -- Records of petition_sign
@@ -1267,7 +1267,7 @@ CREATE TABLE `pet_aura` (
   `remaintime` int(11) NOT NULL DEFAULT '0',
   `effIndexMask` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`caster_guid`,`item_guid`,`spell`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet System';
 
 -- ----------------------------
 -- Records of pet_aura
@@ -1282,7 +1282,7 @@ CREATE TABLE `pet_spell` (
   `spell` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Spell Identifier',
   `active` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`spell`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet System';
 
 -- ----------------------------
 -- Records of pet_spell
@@ -1297,7 +1297,7 @@ CREATE TABLE `pet_spell_cooldown` (
   `spell` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Spell Identifier',
   `time` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`spell`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pet_spell_cooldown
@@ -1313,7 +1313,7 @@ CREATE TABLE `saved_variables` (
   `NextWeeklyQuestResetTime` bigint(40) unsigned NOT NULL DEFAULT '0',
   `NextMonthlyQuestResetTime` bigint(40) unsigned NOT NULL DEFAULT '0',
   `cleaning_flags` int(11) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Variable Saves';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Variable Saves';
 
 -- ----------------------------
 -- Records of saved_variables
@@ -1327,7 +1327,7 @@ CREATE TABLE `world` (
   `map` int(11) unsigned NOT NULL DEFAULT '0',
   `data` longtext,
   PRIMARY KEY (`map`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of world
